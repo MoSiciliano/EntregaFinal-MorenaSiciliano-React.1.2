@@ -1,8 +1,6 @@
 import CartWidget from './CartWidget'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Titulo from '../assets/logo_instagramoOrigin.png';
 import 'animate.css';
 
@@ -10,24 +8,34 @@ const NavBar = () => {
     return (
         <Navbar expand="md" className="navBar animate__animated animate__backInDown" >
             <Container className='container--navbar'>
-                <Navbar.Brand className='tittle--navbar' href="#home"><img src={Titulo} width={100} height={100} /></Navbar.Brand>
+                <Link className='tittle--navbar' to={"/"}>
+                    <img src={Titulo} width={100} height={100} />
+                </Link>
                 <Navbar.Collapse className='basic-navbar-nav' id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#aboutUs">Quiénes somos</Nav.Link>
-                        <Nav.Link href="#Works">Cómo trabajamos</Nav.Link>
-                        <NavDropdown className="dropdown--navbar" title="Service" id="collasible-navbar-nav">
-                            <NavDropdown.Item href="#action/3.1">Antes y despues</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Finalizados
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Procesos</NavDropdown.Item>
-
+                        <Link to={"/about"}>
+                            Nosotros
+                        </Link>
+                        <Link >Cotizaciones</Link>
+                        < NavDropdown title="Catálogo de aberturas" id="basic-nav-dropdown">
+                            <Link to={`/category/${"sureña"}`}>
+                                Sureña
+                            </Link>
+                            <NavDropdown.Divider />
+                            <Link to={`/category/${"corrediza"}`}>
+                                Corrediza
+                            </Link>
+                            <NavDropdown.Divider />
+                            <Link to={`/category/${"pañoFijo"}`}>
+                                Paño fijo
+                            </Link>
                         </NavDropdown>
-                        <Nav.Link href="#contact">Contacto</Nav.Link>
+                        <Link>Contacto</Link>
                     </Nav>
                 </Navbar.Collapse>
-
-                <CartWidget />
+                <Link to={"/cart"}>
+                    <CartWidget />
+                </Link>
             </Container>
         </Navbar>
     )

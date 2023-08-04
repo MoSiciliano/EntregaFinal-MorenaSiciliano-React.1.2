@@ -6,6 +6,16 @@ body{
     background: rgb(12,12,12);
     background: radial-gradient(circle, rgba(12,12,12,1) 0%, rgba(20,20,20,1) 100%);
 }
+a{
+    color: rgb(223, 197, 127) !important;
+    text-decoration: none !important;
+}
+a:hover{
+    text-decoration: underline;
+
+}
+
+/***************NavBar******************/
 .container{
     display: flex;
     flex-direction: row;
@@ -38,17 +48,21 @@ body{
 .dropdown--navbar{
     display:flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    gap:2rem;
 }
 
 .nav-link{
-    font-family:'Times New Roman', Times, serif;
+    
     color:rgb(223, 197, 127) !important;
     border-bottom: rgb(103, 100, 100);
+    padding: 0rem !important;
+
 }
 
 /**********CART WIDGET*********/
 .icon--cart{
-    color:white;
+    filter: drop-shadow(-2px 2px 15px rgba(78, 75, 75, 0.7));
 }
 .number--cart{
    position: absolute;
@@ -69,19 +83,17 @@ body{
 }
 
 /*********ITEM LIST CONTAINER*********/
-.container-text-welcome{
+.container--textWelcome{
     display: grid;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
-    margin-block: 3%;
-
-    background: rgb(12,12,12);
-    background: radial-gradient(circle, rgba(12,12,12,1) 0%, rgba(20,20,20,1) 100%);
+    margin-top: 3.5%;
+    margin-bottom: 0.5%;
 }
 
-.text-welcome{
+.textWelcome{
     font-family:'Times New Roman', Times, serif;
     font-size: 4rem;
     text-align: center;
@@ -90,4 +102,30 @@ body{
     border-bottom: rgb(103, 100, 100);
     
     right: 20%;
+}
+
+.itemList--containerProducts{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap:2rem;
+    padding-block: 2rem;
+}
+
+/******************ITEM LIST******************/
+  /******************ITEM******************/
+.card--container{
+    background-color: white;
+    background: radial-gradient(circle, rgba(12,12,12,1) 0%, rgba(20,20,20,1) 100%);
+    margin-bottom: 10%;
+    margin-inline: 10%;
+
+
+}
+
+/******************ITEM COUNT******************/
+.counter--container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
