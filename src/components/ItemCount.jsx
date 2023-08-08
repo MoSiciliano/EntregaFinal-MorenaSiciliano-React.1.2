@@ -26,13 +26,11 @@ const ItemCount = () => {
     return (
         <Container className='counter--container'>
             <Row>
-
-                <p>{counter}</p>
-
-            </Row>
-            <Row>
                 < Col>
                     <Button onClick={sumar} variant="secondary">+</Button>{' '}
+                </Col>
+                <Col>
+                    <p className='counter'>{counter}</p>
                 </Col>
                 <Col>
                     <Button onClick={restar} variant="secondary">-</Button>{' '}

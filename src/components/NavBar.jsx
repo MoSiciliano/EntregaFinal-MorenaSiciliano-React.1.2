@@ -6,7 +6,7 @@ import 'animate.css';
 
 const NavBar = () => {
     return (
-        <Navbar expand="md" className="navBar animate__animated animate__backInDown" >
+        <Navbar expand="md" className="navBar container animate__animated animate__backInDown" >
             <Container className='container--navbar'>
                 <Link className='tittle--navbar' to={"/"}>
                     <img src={Titulo} width={100} height={100} />
@@ -16,7 +16,7 @@ const NavBar = () => {
                         <Link to={"/about"}>
                             Nosotros
                         </Link>
-                        <Link >Cotizaciones</Link>
+                        { /*<Link >Cotizaciones</Link>*/}
                         < NavDropdown title="Catálogo de aberturas" id="basic-nav-dropdown">
                             <Link to={`/category/${"sureña"}`}>
                                 Sureña
@@ -30,12 +30,12 @@ const NavBar = () => {
                                 Paño fijo
                             </Link>
                         </NavDropdown>
-                        <Link>Contacto</Link>
+                        <Link to={`/contact`}>Contacto</Link>
                     </Nav>
                 </Navbar.Collapse>
-                <Link to={"/cart"}>
-                    <CartWidget />
-                </Link>
+
+                <CartWidget />
+
             </Container>
         </Navbar>
     )

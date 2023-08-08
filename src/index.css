@@ -29,7 +29,7 @@ a:hover{
   
     margin: 0;
     padding: 2%;
-   
+   z-index: 1;
 }
 
 .tittle--navbar{
@@ -59,10 +59,19 @@ a:hover{
     padding: 0rem !important;
 
 }
+/**********CONTACT*********/
+.container--form{
+    margin: 2rem;
+    color:rgb(223, 197, 127) !important;
+}
+
+
+
 
 /**********CART WIDGET*********/
 .icon--cart{
     filter: drop-shadow(-2px 2px 15px rgba(78, 75, 75, 0.7));
+    border:none !important;
 }
 .number--cart{
    position: absolute;
@@ -108,19 +117,61 @@ a:hover{
     display: grid;
     grid-template-columns: repeat(3, auto);
     gap:2rem;
-    padding-block: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+
 }
 
 /******************ITEM LIST******************/
   /******************ITEM******************/
 .card--container{
-    background-color: white;
+    background-color: rgb(41, 39, 39);
     background: radial-gradient(circle, rgba(12,12,12,1) 0%, rgba(20,20,20,1) 100%);
     margin-bottom: 10%;
     margin-inline: 10%;
 
 
 }
+/******************ITEM DETAIL CONTAINER******************/
+  /******************ITEM DETAIL******************/
+.card--detail--container{
+    display: grid !important;
+    grid-template-columns: repeat(2, 6fr);
+    
+    grid-template-areas: 
+    'img body'
+
+    ;
+
+    margin-block: 2rem;
+    margin-bottom: 1.5rem;
+    margin-inline: 10%;
+    
+    justify-content: center;
+    align-items: center;
+
+    color:rgb(149, 145, 145) !important;
+    background-color:rgb(90, 89, 89) !important; 
+    background: radial-gradient(circle, rgba(12,12,12,1) 0%, rgba(20,20,20,1) 100%);
+
+   
+
+}
+.card--detail--body{
+    grid-area: 'body';
+   
+}
+.card--detail--img{
+    grid-area: 'img';
+
+}
+.card--detail--footer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
 
 /******************ITEM COUNT******************/
 .counter--container{
@@ -129,3 +180,45 @@ a:hover{
     align-items: center;
     text-align: center;
 }
+.counter{
+    padding-top: 0.5rem;
+}
+/******************ABOUT US******************/
+.card--aboutUs{
+    display:grid !important;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+
+    justify-content: center;
+    align-items: center;
+    border-color: black;
+    
+
+}
+.card--aboutUs--title{
+    color:rgb(50, 48, 48) !important;
+    font-size:7rem !important;
+    text-align: center !important;
+    padding-top: 7%;
+    min-height: 25vw;
+    background-image: url('./assets/fondo--nosotros.jpg');
+    background-repeat:repeat-x;    
+    padding-bottom: 1%;
+}
+.card--about--text--container{
+    margin-inline: 10rem;
+    text-align: center;
+    color:rgb(100, 92, 92) !important;
+    padding-bottom: 2%;;
+
+    display:flex;
+    flex-direction: column;
+}
+.card--about--title--text{
+    font-size: xx-large;
+    
+}
+
+
+
