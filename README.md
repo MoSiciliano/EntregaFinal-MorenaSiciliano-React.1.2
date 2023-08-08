@@ -17,6 +17,4 @@ I hope you like it and if you find things to mention to top it even more, these 
 [Linkedin](https://www.linkedin.com/in/morena-siciliano-179876273/)
 [Instagram](https://www.instagram.com/moresiciliano/)
 
-For the last thanks you for seeing my [GIFT](https://www.loom.com/share/e75367b9f89745a583b617b50050b827?t=66&sid=849d52df-f75e-4984-a979-5a1013a54782)
-
-![Alt text](image-2.png)
+For the last thanks you for seeing my [GIFT](https://www.loom.com/share/e75367b9f89745a583b617b50050b827?t=5&sid=bfcf5a04-3790-4a5a-abba-e1cb70f6b67d) !
