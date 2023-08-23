@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
 }
-body{
+body{ 
     background: rgb(12,12,12);
     background: radial-gradient(circle, rgba(12,12,12,1) 0%, rgba(20,20,20,1) 100%);
 }
@@ -27,9 +27,10 @@ a:hover{
     max-width: 100vw;
     max-height: 12vw;
   
+    font-family:'Times New Roman', Times, serif;
     margin: 0;
     padding: 2%;
-   z-index: 1;
+    z-index: 1;
 }
 
 .tittle--navbar{
@@ -66,8 +67,6 @@ a:hover{
 }
 
 
-
-
 /**********CART WIDGET*********/
 .icon--cart{
     filter: drop-shadow(-2px 2px 15px rgba(78, 75, 75, 0.7));
@@ -88,9 +87,75 @@ a:hover{
   
    padding-top: 0px;
    padding-bottom: 3px;
-   top: 25%;
+   top: 5%;
+   left: 140%;
+  
 }
+/*********CART*********/
+.container--cart{
+    display: grid ;
+    grid-template-columns: repeat(4, 3fr);
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    
+    gap: 2vw;
 
+    margin-block: 2rem;
+    margin-bottom: 1.5rem;
+    margin-inline: 5%;
+
+    font-family:'Times New Roman', Times, serif;
+    color:rgb(149, 145, 145) !important;
+    background-color:rgb(90, 89, 89) !important; 
+    background: radial-gradient(circle, rgb(17, 16, 16) 0%, rgba(20,20,20,1) 100%)!important;
+
+}
+.cart--price{
+    display: inline-block;
+    padding-inline: 5%;
+    gap: 5%;
+
+}
+.cart--price--quantity{
+    color:rgb(223, 197, 127);
+}
+.container--cart--footer{
+    display: grid;
+    grid-row: repeat(2, 6fr);
+    flex-direction: row;
+    justify-content: end;
+    gap: 2%;
+
+    margin-inline: 5%;
+    padding-right: 1%;
+    padding-inline:2%;
+
+}
+.total--price--cart{
+    color:rgb(223, 197, 127);
+}
+.container--btn--cart{
+    display:flex;
+    gap: 4%;
+}
+.btn{
+    width: 50%;
+}
+.cart--empty{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-block: 12%;
+
+    color:rgb(223, 197, 127);
+    font-family: 'Times New Roman', Times, serif;
+}
+.text--cart--empty{
+   font-size: 4rem;
+}
 /*********ITEM LIST CONTAINER*********/
 .container--textWelcome{
     display: grid;
@@ -113,6 +178,7 @@ a:hover{
     right: 20%;
 }
 
+/******************ITEM LIST******************/
 .itemList--containerProducts{
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -122,7 +188,6 @@ a:hover{
 
 }
 
-/******************ITEM LIST******************/
   /******************ITEM******************/
 .card--container{
     background-color: rgb(41, 39, 39);
@@ -146,25 +211,14 @@ a:hover{
     margin-block: 2rem;
     margin-bottom: 1.5rem;
     margin-inline: 10%;
-    
-    justify-content: center;
-    align-items: center;
+
 
     color:rgb(149, 145, 145) !important;
     background-color:rgb(90, 89, 89) !important; 
     background: radial-gradient(circle, rgba(12,12,12,1) 0%, rgba(20,20,20,1) 100%);
 
-   
+}
 
-}
-.card--detail--body{
-    grid-area: 'body';
-   
-}
-.card--detail--img{
-    grid-area: 'img';
-
-}
 .card--detail--footer{
     display:flex;
     flex-direction: column;

@@ -1,40 +1,38 @@
-import { useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { Button, Container, Row, Col } from 'react-bootstrap';
+import { CartContext } from '../Context/ShoppingCartContext';
+
 /**Counter class 05 */
-const ItemCount = () => {
-    const [counter, setCounter] = useState(0)
+const ItemCount = ({ stock, product }) => {
+    const { cart, addToCart } = useContext(CartContext)
+    const [quantity, setCounter] = useState(1)
 
-    useEffect(() => {
-
-    }, [counter])
-    const sumar = () => {
-        if (counter == 0 || counter > 1) {
-            setCounter(counter + 1)
-        } else {
-            setCounter(counter + 1)
-        }
-    }
-    const restar = () => {
-        if (counter > 0) {
-            setCounter(counter - 1)
-        } else if (counter == 0) {
-            console.log("No se pueden seguir restando productos");
-        }
+    const handleSums = () => {
+        quantity < stock ?
+            setCounter(quantity + 1)
+            : console.log("there is no more stock")
 
     }
+
+    const handleLess = () => {
+        quantity > 1 && setCounter(quantity - 1)
+
+    }
+
 
     return (
         <Container className='counter--container'>
             <Row>
                 < Col>
-                    <Button onClick={sumar} variant="secondary">+</Button>{' '}
+                    <Button onClick={handleSums} variant="secondary">+</Button>{' '}
                 </Col>
                 <Col>
-                    <p className='counter'>{counter}</p>
+                    <p className='counter'>{quantity}</p>
                 </Col>
                 <Col>
-                    <Button onClick={restar} variant="secondary">-</Button>{' '}
+                    <Button onClick={handleLess} variant="secondary">-</Button>{' '}
                 </Col>
+                <Button onClick={() => { addToCart(product, quantity) }} variant='dark'>Add to cart</Button>
             </Row>
         </Container>
     )

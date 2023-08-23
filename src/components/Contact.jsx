@@ -1,13 +1,20 @@
 import React from 'react'
+import { useState } from 'react';
 import { Form, Row, Button, Col } from 'react-bootstrap';
 
 const Contact = () => {
+    const [email, setEmail] = useState("")
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        email === "" ? alert("complete") : alert(email);
+        console.log("enviando ${email}");
+    }
     return (
-        <Form className='container--form'>
+        <Form className='container--form' onSubmit={handleSubmit}>
             <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} />
                 </Form.Group>
             </Row>
 

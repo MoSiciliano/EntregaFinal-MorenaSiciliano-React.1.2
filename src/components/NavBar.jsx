@@ -16,7 +16,7 @@ const NavBar = () => {
                         <Link to={"/about"}>
                             Nosotros
                         </Link>
-                        { /*<Link >Cotizaciones</Link>*/}
+
                         < NavDropdown title="Catálogo de aberturas" id="basic-nav-dropdown">
                             <Link to={`/category/${"sureña"}`}>
                                 Sureña
@@ -35,6 +35,7 @@ const NavBar = () => {
                 </Navbar.Collapse>
 
                 <CartWidget />
+
 
             </Container>
         </Navbar>

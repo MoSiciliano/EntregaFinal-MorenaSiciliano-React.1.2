@@ -7,11 +7,11 @@ const ItemList = ({ products }) => {
             {products.map((p) =>
 
                 <Item
-                    key={p.id}
+                    key={p.name}
                     id={p.id}
                     img={p.img}
                     name={p.name}
-                    description={p.description}
+                    description={p.mini}
                     price={p.price}
                 />
 
