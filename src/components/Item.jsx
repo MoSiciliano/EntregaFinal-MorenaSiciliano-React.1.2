@@ -10,9 +10,8 @@ const Item = (
     return (
         <>
             <Card className="bg-dark text-white card--container">
-                <Card.Img variant="top" src={img} alt={name} />
+                <Card.Img variant="top" src={img} alt={name} width={'100%'} height={'500vw'} />
                 <Card.Body>
-
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
                         {description}

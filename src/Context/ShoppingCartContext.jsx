@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
-import { json } from 'react-router-dom'
+import toast, { Toaster } from 'react-hot-toast';
+
 
 
 export const CartContext = createContext({ cart: [] })
@@ -7,18 +8,32 @@ const carritoInicial = JSON.parse(localStorage.getItem("cart")) || [];
 
 export const ShoppingCartProvider = ({ children }) => {
     const [cart, setCart] = useState(carritoInicial)
+
     const addToCart = (product, quantity) => {
         const productAdd = { ...product, quantity };
         const newCart = [...cart]
         const isInCart = cart.find((item) => item.id == product.id);
         if (isInCart) {
             isInCart.quantity += quantity;
+
         } else {
             newCart.push(productAdd)
         }
         setCart(newCart);
+        toast('Agregado!',
+            {
+                icon: '🛒',
+                style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+
+                },
+            }
+        );
 
     }
+
     const quantityInCart = () => {
         return cart.reduce((acc, product) => acc + product.quantity, 0)
     }
@@ -42,9 +57,11 @@ export const ShoppingCartProvider = ({ children }) => {
         }).filter((product) => product !== null);
         setCart(updatedCart);
     };
+
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart))
     }, [cart])
+
     return (
         <CartContext.Provider value={{
             cart,
@@ -54,6 +71,10 @@ export const ShoppingCartProvider = ({ children }) => {
             deleteCart,
             removeProduct
         }}>
+            <Toaster
+                position="top-right"
+                reverseOrder={false}
+            />
             {children}
         </CartContext.Provider>
     )

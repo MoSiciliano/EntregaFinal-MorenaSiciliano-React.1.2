@@ -3,10 +3,18 @@ import 'animate.css';
 import ItemList from './ItemList';
 import { getFirestore, collection, getDocs } from 'firebase/firestore'
 import { useParams } from 'react-router-dom';
+import Loading from './Loading';
 
 const ItemListContainer = () => {
   const { category } = useParams()
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 2500);
+  }, [])
+
   useEffect(() => {
     const db = getFirestore()
     const itemsCollection = collection(db, "ventanas");
@@ -18,7 +26,6 @@ const ItemListContainer = () => {
     })
 
   }, [])
-
   const filterProducts = products.filter(
     (product) => product.category === category)
 
@@ -26,7 +33,17 @@ const ItemListContainer = () => {
   return (
     <>
       <section className='itemList--container'>
-        {<ItemList products={filterProducts} />}
+        {loading ? (<Loading />) :
+          category &&
+          <div>
+            <h2 className='title--category'> {category}</h2>
+            <ItemList products={filterProducts} stock={filterProducts.stock} />
+          </div>
+          ||
+          <div>
+            <h2 className='title--category'>Productos</h2>
+            <ItemList products={products} />
+          </div>}
       </section>
 
     </>

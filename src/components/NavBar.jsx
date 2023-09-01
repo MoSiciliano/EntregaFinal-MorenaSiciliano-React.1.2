@@ -18,15 +18,15 @@ const NavBar = () => {
                         </Link>
 
                         < NavDropdown title="Catálogo de aberturas" id="basic-nav-dropdown">
-                            <Link to={`/category/${"sureña"}`}>
+                            <Link to={`/category/${"Sureña"}`}>
                                 Sureña
                             </Link>
                             <NavDropdown.Divider />
-                            <Link to={`/category/${"corrediza"}`}>
+                            <Link to={`/category/${"Corrediza"}`}>
                                 Corrediza
                             </Link>
                             <NavDropdown.Divider />
-                            <Link to={`/category/${"pañoFijo"}`}>
+                            <Link to={`/category/${"Paño Fijo"}`}>
                                 Paño fijo
                             </Link>
                         </NavDropdown>

@@ -3,52 +3,41 @@ import { useState } from 'react';
 import { Form, Row, Button, Col } from 'react-bootstrap';
 
 const Contact = () => {
-    const [email, setEmail] = useState("")
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        email === "" ? alert("complete") : alert(email);
-        console.log("enviando ${email}");
-    }
+    const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [consulta, setConsulta] = useState("");
+
+
     return (
-        <Form className='container--form' onSubmit={handleSubmit}>
+        <Form className='container--form'>
             <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} />
+                    <Form.Control type="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </Form.Group>
             </Row>
 
-            <Form.Group className="mb-3" controlId="formGridAddress1">
-                <Form.Label>Address</Form.Label>
-                <Form.Control placeholder="1234 Main St" />
+            <Form.Group className="mb-3" controlId="formGridName">
+                <Form.Label>Nombre</Form.Label>
+                <Form.Control placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formGridAddress2">
-                <Form.Label>Address 2</Form.Label>
-                <Form.Control placeholder="Apartment, studio, or floor" />
+            <Form.Group className="mb-3" controlId="formGridLastName">
+                <Form.Label>Apellido</Form.Label>
+                <Form.Control placeholder="Enter your last name" value={lastName} onChange={(e) => setLastName(e.target.value)} />
             </Form.Group>
 
             <Row className="mb-3">
-                <Form.Group as={Col} controlId="formGridCity">
-                    <Form.Label>City</Form.Label>
-                    <Form.Control />
+                <Form.Group as={Col} controlId="formGridQst">
+                    <Form.Label>Consulta</Form.Label>
+                    <Form.Control placeholder='here you can ask to Samana your question' value={consulta} onChange={(e) => setConsulta(e.target.value)} />
                 </Form.Group>
 
-                <Form.Group as={Col} controlId="formGridState">
-                    <Form.Label>State</Form.Label>
-                    <Form.Select defaultValue="Choose...">
-                        <option>Choose...</option>
-                        <option>...</option>
-                    </Form.Select>
-                </Form.Group>
             </Row>
 
-            <Form.Group className="mb-3" id="formGridCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-
             <Button variant="warning" type="submit">
-                Submit
+                Enviar
             </Button>
         </Form>
     );

@@ -11,7 +11,7 @@ const CartWidget = () => {
     return (
         <>
             <Link to={"/cart"}>
-                <Button variant="outline-dark" className="me-2 icon--cart">
+                <Button variant="outline-dark" className=" button--cart icon--cart">
                     <img className='icon--cart' src={icon} alt="" width={50} height={50} />
                     <span className='number--cart' size='md'>{quantityInCart()}</span>
                 </Button>

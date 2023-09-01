@@ -4,7 +4,7 @@ import { CartContext } from '../Context/ShoppingCartContext';
 
 /**Counter class 05 */
 const ItemCount = ({ stock, product }) => {
-    const { cart, addToCart } = useContext(CartContext)
+    const { addToCart } = useContext(CartContext)
     const [quantity, setCounter] = useState(1)
 
     const handleSums = () => {
@@ -24,13 +24,13 @@ const ItemCount = ({ stock, product }) => {
         <Container className='counter--container'>
             <Row>
                 < Col>
-                    <Button onClick={handleSums} variant="secondary">+</Button>{' '}
+                    <Button onClick={handleLess} variant="secondary">-</Button>{' '}
                 </Col>
                 <Col>
                     <p className='counter'>{quantity}</p>
                 </Col>
                 <Col>
-                    <Button onClick={handleLess} variant="secondary">-</Button>{' '}
+                    <Button onClick={handleSums} variant="secondary">+</Button>{' '}
                 </Col>
                 <Button onClick={() => { addToCart(product, quantity) }} variant='dark'>Add to cart</Button>
             </Row>
